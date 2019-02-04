@@ -1,0 +1,37 @@
+<div class="container">
+	<h2>Novels Available</h2>
+	<table borde="1" class="table">
+	<tr>
+		<th>Novel Title</th>
+		<th>Author ID</th>
+		<th>Publisher ID</th>
+		<th>Genre ID</th>
+		<th>Price</th>
+		<th>ISBN</th>
+		<th>Publication</th>
+		<th>Pages</th>
+		<th>Format</th>
+		<th>Description</th>
+		<th>Details</th>
+		<th>Edit</th>
+		<th>Delete</th>
+	</tr>
+	<% @novells.each do |novell| %>
+	<tr>
+		<td><%= novell.title %></td>
+		<td><%= novell.author_id %></td>
+		<td><%= novell.publisher_id %></td>
+		<td><%= novell.genre_id %></td>
+		<td><%= novell.price %></td>
+		<td><%= novell.isbn %></td>
+		<td><%= novell.publication %></td>
+		<td><%= novell.pages %></td>
+		<td><%= novell.format %></td>
+		<td><%= novell.description %></td>
+		<td><%= link_to 'Show', novell_path(novell) %></td>
+		<td><%= link_to 'Edit', edit_novell_path(novell) %></td>
+		<td><%= link_to 'Delete', novell_path(novell), method: :Delete, data: {confirm: "Are you sure you want to delete details"} %></td>
+	</tr>
+	<% end %>
+	</table>
+</div>
